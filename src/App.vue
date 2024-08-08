@@ -22,12 +22,14 @@ import Browse from "./components/Browse.vue";
         </q-header>
 
         <q-page-container>
-            <div class="row">
+            <div class="row q-mb-lg">
                 <div class="col-8"><ApiKey /></div>
             </div>
-            <div class="row">
+            <div class="row q-mb-lg">
                 <div class="col-8"><Browse /></div>
             </div>
+
+            <q-separator />
         </q-page-container>
     </q-layout>
 </template>
