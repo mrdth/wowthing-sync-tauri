@@ -18,13 +18,19 @@ async function getDir() {
 </script>
 
 <template>
-    <form class="row" @submit.prevent="getDir">
-        <input
-            id="greet-input"
-            readonly
-            v-model="store.gameDir"
-            placeholder="Browse for game dir."
-        />
-        <button type="submit">Browse</button>
+    <form @submit.prevent="getDir">
+        <!-- <div class="col-9"> -->
+        <q-input v-model="store.gameDir" label="Wow Directory">
+            <template v-slot:append>
+                <q-btn
+                    color="white"
+                    text-color="black"
+                    label="Browse"
+                    @click="getDir"
+                />
+            </template>
+        </q-input>
+        <!-- </div> -->
+        <div class="col"></div>
     </form>
 </template>

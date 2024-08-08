@@ -7,13 +7,29 @@ import Browse from "./components/Browse.vue";
 </script>
 
 <template>
-    <div class="container">
-        <h1>Welcome to Tauri!</h1>
+    <q-layout view="hHh lpR fFf">
+        <q-header elevated class="bg-primary text-white">
+            <q-toolbar>
+                <q-toolbar-title>
+                    <q-avatar>
+                        <img
+                            src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg"
+                        />
+                    </q-avatar>
+                    Wowthing Sync - Linux
+                </q-toolbar-title>
+            </q-toolbar>
+        </q-header>
 
-        <ApiKey />
-        <br />
-        <Browse />
-    </div>
+        <q-page-container>
+            <div class="row">
+                <div class="col-8"><ApiKey /></div>
+            </div>
+            <div class="row">
+                <div class="col-8"><Browse /></div>
+            </div>
+        </q-page-container>
+    </q-layout>
 </template>
 
 <style scoped>
