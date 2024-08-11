@@ -4,6 +4,11 @@ import { ref } from "vue";
 export const useAppStore = defineStore("app", () => {
   const apiKey = ref("");
   const gameDir = ref("");
+  const messages = ref<string[]>([]);
 
-  return { apiKey, gameDir };
+  const addMessage = (message: string) => {
+    messages.value.push(message);
+  };
+
+  return { apiKey, gameDir, messages, addMessage };
 });

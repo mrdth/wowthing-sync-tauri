@@ -1,9 +1,7 @@
 import { createApp } from "vue";
-import { createPinia, PiniaVuePlugin } from "pinia";
+import { createPinia } from "pinia";
 import { Quasar } from "quasar";
 import quasarLang from "quasar/lang/en-GB";
-// Import icon libraries
-import "@quasar/extras/material-icons/material-icons.css";
 
 // Import Quasar css
 import "quasar/src/css/index.sass";

@@ -1,9 +1,9 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import Greet from "./components/Greet.vue";
 import ApiKey from "./components/ApiKey.vue";
 import Browse from "./components/Browse.vue";
+import SyncPanel from "./components/SyncPanel.vue";
 </script>
 
 <template>
@@ -29,7 +29,11 @@ import Browse from "./components/Browse.vue";
                 <div class="col-8"><Browse /></div>
             </div>
 
-            <q-separator />
+            <div class="row q-my-lg">
+                <div class="col-8">
+                    <SyncPanel />
+                </div>
+            </div>
         </q-page-container>
     </q-layout>
 </template>
