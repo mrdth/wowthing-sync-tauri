@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { open } from "@tauri-apps/api/dialog";
+import { open } from '@tauri-apps/plugin-dialog';
 import { useAppStore } from "../stores/AppStore";
 
 const store = useAppStore();
@@ -20,14 +20,9 @@ async function getDir() {
 <template>
     <form @submit.prevent="getDir">
         <!-- <div class="col-9"> -->
-        <q-input v-model="store.gameDir" label="Wow Directory">
+        <q-input v-model="store.gameDir" label="WoW Folder">
             <template v-slot:append>
-                <q-btn
-                    color="white"
-                    text-color="black"
-                    label="Browse"
-                    @click="getDir"
-                />
+                <q-btn color="white" text-color="black" label="Browse" @click="getDir" />
             </template>
         </q-input>
         <!-- </div> -->

@@ -22,8 +22,16 @@ onMounted(() => {
 <template>
     <q-card flat class="width-full">
         <q-card-section class="flex justify-between">
-            <q-toggle v-model="monitor" label="Monitor" />
-            <q-btn @click="upload" label="Manual Upload" />
+            <q-toggle :disable="store.gameDir && store.apiKey" v-model="monitor" label="Monitor">
+                <q-tooltip v-if="!(store.gameDir && store.apiKey)">
+          Please set your API Key and WoW Folder first
+        </q-tooltip>
+        </q-toggle>
+            <q-btn :disable="store.gameDir && store.apiKey" @click="upload" label="Manual Upload">
+                <q-tooltip v-if="!(store.gameDir && store.apiKey)">
+          Please set your API Key and WoW Folder first
+        </q-tooltip>
+        </q-btn>
         </q-card-section>
         <q-card-section>
             <q-card>
