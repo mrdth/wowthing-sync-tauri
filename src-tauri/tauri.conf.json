@@ -2,52 +2,36 @@
   "build": {
     "beforeDevCommand": "npm run dev",
     "beforeBuildCommand": "npm run build",
-    "devPath": "http://localhost:1420",
-    "distDir": "../dist"
+    "frontendDist": "../dist",
+    "devUrl": "http://localhost:1420"
   },
-  "package": {
-    "productName": "tauri-test",
-    "version": "0.0.0"
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
   },
-  "tauri": {
-    "allowlist": {
-      "all": false,
-      "shell": {
-        "all": false,
-        "open": true
-      },
-      "fs": {
-        "readDir": true,
-        "scope": ["**"]
-      },
-      "dialog": {
-        "open": true
-      },
-      "path": {
-        "all": true
-      }
-    },
-    "windows": [
-      {
-        "title": "tauri-test",
-        "width": 800,
-        "height": 600
-      }
-    ],
+  "productName": "wowthing-sync",
+  "mainBinaryName": "wowthing-sync",
+  "version": "0.0.0",
+  "identifier": "com.mrdth.wowthing-sync",
+  "plugins": {},
+  "app": {
     "security": {
       "csp": null
     },
-    "bundle": {
-      "active": true,
-      "targets": "all",
-      "identifier": "com.mrdth.wowthing-sync",
-      "icon": [
-        "icons/32x32.png",
-        "icons/128x128.png",
-        "icons/128x128@2x.png",
-        "icons/icon.icns",
-        "icons/icon.ico"
-      ]
-    }
+    "windows": [
+      {
+        "title": "WoWthing Sync",
+        "width": 800,
+        "height": 600,
+        "useHttpsScheme": true
+      }
+    ]
   }
 }
