@@ -3,11 +3,12 @@
 import {onMounted, ref, watch} from "vue";
 import {open} from "@tauri-apps/plugin-dialog";
 import { load } from "@tauri-apps/plugin-store";
+import { useEventsBus } from "../EventBus.ts";
+
 const isPwd = ref(true);
-const apiKey = ref('test');
+const apiKey = ref('');
 const gameDir = ref('');
 
-const store = await load('settings.json', { autoSave: true });
 
 async function getDir() {
   // Open a selection dialog for directories
@@ -38,10 +39,12 @@ onMounted(async () => {
 });
 
 watch(apiKey, async (val) => {
+  useEventsBus().emit('ApiKeyUpdated', {valid: val !== ''});
   await writeSetting('apiKey', val);
 });
 
 watch(gameDir, async (val) => {
+  useEventsBus().emit('GameDirUpdated', {valid: val !== ''});
   await writeSetting('gameDir', val);
 });
 
